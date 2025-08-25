@@ -1,0 +1,39 @@
+site_name: Project Documentation
+site_description: Comprehensive API, usage, and examples documentation
+site_url: https://example.com
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_category_heading: true
+            merge_init_into_class: true
+            separate_signature: true
+            inherited_members: true
+            filters:
+              - "!^_"
+            heading_level: 2
+            members_order: source
+
+nav:
+  - Overview: index.md
+  - Usage: usage.md
+  - Examples: examples.md
+  - API Reference:
+      - Python: api.md
+  - Contributing: contributing.md
